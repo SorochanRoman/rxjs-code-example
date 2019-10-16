@@ -12,6 +12,7 @@ export class InitObservableComponent implements OnInit {
 
   ngOnInit() {
     this.manualCreate();
+    this.createByOf();
 
   }
 
@@ -25,5 +26,10 @@ export class InitObservableComponent implements OnInit {
     observable.subscribe(res => console.log('manualCreate', res));
   }
 
+  createByOf() {
+    const observable = of(1, 2);
+    observable.subscribe(res => console.log('createByOf', res));
+
+  }
 
 }
