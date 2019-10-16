@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, from } from 'rxjs';
 
 @Component({
   selector: 'app-init-observable',
@@ -13,6 +13,9 @@ export class InitObservableComponent implements OnInit {
   ngOnInit() {
     this.manualCreate();
     this.createByOf();
+    this.createByFrom('abcd');
+    this.createByFrom(['String 1', 'String 2', 'String 3']);
+
 
   }
 
@@ -29,7 +32,12 @@ export class InitObservableComponent implements OnInit {
   createByOf() {
     const observable = of(1, 2);
     observable.subscribe(res => console.log('createByOf', res));
+  }
 
+  createByFrom(iterable) {
+    const observable = from(iterable);
+    console.log(`%c createByFrom ${iterable}`, 'background: #222; color: #bada55')
+    observable.subscribe(res => console.log(`${res}`));
   }
 
 }
