@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, of, from } from 'rxjs';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Observable, of, from, fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-init-observable',
@@ -7,6 +7,8 @@ import { Observable, of, from } from 'rxjs';
   styleUrls: ['./init-observable.component.css']
 })
 export class InitObservableComponent implements OnInit {
+
+  @ViewChild('clickButton', { static: true }) clickButton: ElementRef;
 
   constructor() { }
 
@@ -19,9 +21,12 @@ export class InitObservableComponent implements OnInit {
     const promise = new Promise((resolve, reject) => {
       resolve('i am from promise');
     });
+
     this.createByFrom(promise);
+  }
 
-
+  ngAfterViewInit(): void {
+    this.createFromDomEvent(this.clickButton.nativeElement, 'click');
   }
 
   manualCreate() {
@@ -43,6 +48,11 @@ export class InitObservableComponent implements OnInit {
     const observable = from(iterable);
     console.log(`%ccreateByFrom ${iterable}`, 'background: #222; color: #bada55')
     observable.subscribe(res => console.log(`%c${res}`, 'margin-left: 30px'));
+  }
+
+  createFromDomEvent(element, event) {
+    const observable = fromEvent(element, event);
+    observable.subscribe(res => console.log('createFromDomEvent', `${event} - ${res}`));
   }
 
 }
