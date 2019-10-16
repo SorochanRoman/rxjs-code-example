@@ -16,6 +16,11 @@ export class InitObservableComponent implements OnInit {
     this.createByFrom('abcd');
     this.createByFrom(['String 1', 'String 2', 'String 3']);
 
+    const promise = new Promise((resolve, reject) => {
+      resolve('i am from promise');
+    });
+    this.createByFrom(promise);
+
 
   }
 
@@ -36,8 +41,8 @@ export class InitObservableComponent implements OnInit {
 
   createByFrom(iterable) {
     const observable = from(iterable);
-    console.log(`%c createByFrom ${iterable}`, 'background: #222; color: #bada55')
-    observable.subscribe(res => console.log(`${res}`));
+    console.log(`%ccreateByFrom ${iterable}`, 'background: #222; color: #bada55')
+    observable.subscribe(res => console.log(`%c${res}`, 'margin-left: 30px'));
   }
 
 }
