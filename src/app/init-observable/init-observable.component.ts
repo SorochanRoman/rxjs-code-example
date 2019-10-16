@@ -14,6 +14,7 @@ export class InitObservableComponent implements OnInit {
 
   ngOnInit() {
     this.manualCreate();
+    this.manualWithEmitter();
     this.createByOf();
     this.createByFrom('abcd');
     this.createByFrom(['String 1', 'String 2', 'String 3']);
@@ -37,6 +38,17 @@ export class InitObservableComponent implements OnInit {
       observer.complete();
     });
     observable.subscribe(res => console.log('manualCreate', res));
+  }
+
+  manualWithEmitter() {
+    let emitter;
+    const observable = Observable.create(e => emitter = e);
+
+    observable.subscribe(res => console.log('manualWithEvent', res));
+    emitter.next('first');
+    emitter.next('second');
+    emitter.next('third');
+    emitter.complete();
   }
 
   createByOf() {
