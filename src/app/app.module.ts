@@ -6,6 +6,7 @@ import { InitObservableComponent } from './init-observable/init-observable.compo
 import { OperatorsObservableComponent } from './operators-observable/operators-observable.component';
 import { HooOperatorsObservableComponent } from './hoo-operators-observable/hoo-operators-observable.component';
 import { SubjectsComponent } from './subjects/subjects.component';
+import { DragEventComponent } from './drag-event/drag-event.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { SubjectsComponent } from './subjects/subjects.component';
     InitObservableComponent,
     OperatorsObservableComponent,
     HooOperatorsObservableComponent,
-    SubjectsComponent
+    SubjectsComponent,
+    DragEventComponent
   ],
   imports: [
     BrowserModule
