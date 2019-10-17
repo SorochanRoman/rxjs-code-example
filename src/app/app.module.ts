@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { InitObservableComponent } from './init-observable/init-observable.component';
+import { OperatorsObservableComponent } from './operators-observable/operators-observable.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InitObservableComponent
+    InitObservableComponent,
+    OperatorsObservableComponent
   ],
   imports: [
     BrowserModule
