@@ -13,7 +13,7 @@ export class SubjectsComponent implements OnInit {
   ngOnInit() {
     // this.subject();
     // this.replaySubject();
-    // this.behaviorSubject();
+    this.behaviorSubject();
   }
 
   subject() {

@@ -15,7 +15,7 @@ export class HooOperatorsObservableComponent implements OnInit {
     // this.mergeAll();
     // this.mergeMap();
     // this.concatAll();
-    // this.switchAll();
+    this.switchAll();
     // this.switchMap();
     // this.exhaust();
 
