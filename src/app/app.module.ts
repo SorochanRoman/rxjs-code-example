@@ -8,6 +8,7 @@ import { HooOperatorsObservableComponent } from './hoo-operators-observable/hoo-
 import { SubjectsComponent } from './subjects/subjects.component';
 import { DragEventComponent } from './drag-event/drag-event.component';
 import { ErrosOperatorsComponent } from './erros-operators/erros-operators.component';
+import { LiveSearchExampleComponent } from './live-search-example/live-search-example.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ErrosOperatorsComponent } from './erros-operators/erros-operators.compo
     HooOperatorsObservableComponent,
     SubjectsComponent,
     DragEventComponent,
-    ErrosOperatorsComponent
+    ErrosOperatorsComponent,
+    LiveSearchExampleComponent
   ],
   imports: [
     BrowserModule
