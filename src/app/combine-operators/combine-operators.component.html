@@ -1,0 +1,34 @@
+<p>combine-operators works!</p>
+
+
+<form [formGroup]="form">
+    <div formGroupName="contact">
+        <h3>Contact info</h3>
+        <input type="text" formControlName="firstName" placeholder="firstName"> <br>
+        <input type="text" formControlName="lastName" placeholder="firstName">
+    </div>
+    <div formGroupName="inputCard">
+        <h3>Input</h3>
+        <input type="number" formControlName="value" placeholder="value"> <br>
+        <select formControlName="currency">
+            <option [ngValue]="null" disabled>Choose currency</option>
+            <option *ngFor="let currency of currencies" [ngValue]="currency">
+                {{ currency }}
+            </option>
+        </select>
+    </div>
+    <div formGroupName="outputCard">
+        <h3>Output</h3>
+        <input type="number" formControlName="value" placeholder="value"> <br>
+        <select formControlName="currency">
+            <option [ngValue]="null" disabled>Choose currency</option>
+            <option *ngFor="let currency of currencies" [ngValue]="currency">
+                {{ currency }}
+            </option>
+        </select>
+    </div>
+    <div>
+        <h3>Tax</h3>
+        <input type="text" formControlName="tax" placeholder="tax">
+    </div>
+</form>

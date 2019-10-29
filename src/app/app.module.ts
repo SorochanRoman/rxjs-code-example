@@ -9,6 +9,8 @@ import { SubjectsComponent } from './subjects/subjects.component';
 import { DragEventComponent } from './drag-event/drag-event.component';
 import { ErrosOperatorsComponent } from './erros-operators/erros-operators.component';
 import { LiveSearchExampleComponent } from './live-search-example/live-search-example.component';
+import { CombineOperatorsComponent } from './combine-operators/combine-operators.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -19,10 +21,13 @@ import { LiveSearchExampleComponent } from './live-search-example/live-search-ex
     SubjectsComponent,
     DragEventComponent,
     ErrosOperatorsComponent,
-    LiveSearchExampleComponent
+    LiveSearchExampleComponent,
+    CombineOperatorsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
