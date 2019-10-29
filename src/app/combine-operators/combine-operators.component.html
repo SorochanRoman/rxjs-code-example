@@ -9,8 +9,8 @@
     </div>
     <div formGroupName="inputCard">
         <h3>Input</h3>
-        <input type="number" formControlName="value" placeholder="value"> <br>
-        <select formControlName="currency">
+        <input type="number" formControlName="inputValue" placeholder="value"> <br>
+        <select formControlName="inputCurrency">
             <option [ngValue]="null" disabled>Choose currency</option>
             <option *ngFor="let currency of currencies" [ngValue]="currency">
                 {{ currency }}
@@ -19,8 +19,8 @@
     </div>
     <div formGroupName="outputCard">
         <h3>Output</h3>
-        <input type="number" formControlName="value" placeholder="value"> <br>
-        <select formControlName="currency">
+        <input type="number" formControlName="outputValue" placeholder="value"> <br>
+        <select formControlName="outputCurrency">
             <option [ngValue]="null" disabled>Choose currency</option>
             <option *ngFor="let currency of currencies" [ngValue]="currency">
                 {{ currency }}
